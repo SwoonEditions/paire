@@ -1,0 +1,42 @@
+dependencies:
+  override:
+    - sudo add-apt-repository -y ppa:masterminds/glide
+    - sudo apt-get update
+    - sudo apt-get install -y glide
+    - mkdir -p mkdir -p ~/.go_workspace/src/github.com/asarturas
+    - ln -sfn ~/paire ~/.go_workspace/src/github.com/asarturas/paire
+    - glide install
+    - go get github.com/mitchellh/gox
+test:
+  override:
+    - >
+      cd ~/.go_workspace/src/github.com/asarturas/paire
+      && cd paire
+      && go test -v
+      && cd ..
+      && go test -v *unit*
+      && go test -v *integration*
+      && cd paire/cmd/push
+      && gox -osarch "linux/amd64" -output="paire-{{.Dir}}_{{.OS}}_{{.Arch}}"
+      && cd ../pull
+      && gox -osarch "linux/amd64" -output="paire-{{.Dir}}_{{.OS}}_{{.Arch}}"
+      && cd ../../..
+      && go test -v *e2e*
+
+deployment:
+  github:
+    branch: master
+    commands:
+      - >
+        cd ~/.go_workspace/src/github.com/asarturas/paire/paire/cmd/push
+        && gox -osarch "darwin/amd64 windows/amd64" -output="paire-{{.Dir}}_{{.OS}}_{{.Arch}}"
+        && mv paire-push_linux_amd64 paire-push
+        && mv paire-push_darwin_amd64 paire-push_mac
+        && mv paire-push_windows_amd64.exe paire-push.exe
+        && cd ../pull
+        && gox -osarch "darwin/amd64 windows/amd64" -output="paire-{{.Dir}}_{{.OS}}_{{.Arch}}"
+        && mv paire-pull_linux_amd64 ../push/paire-pull
+        && mv paire-pull_darwin_amd64 ../push/paire-pull_mac
+        && mv paire-pull_windows_amd64.exe ../push/paire-pull.exe
+        && cd ../push
+        && ./paire-push -package paire-push -package paire-push_mac -package paire-push.exe -package paire-pull -package paire-pull_mac -package paire-pull.exe
