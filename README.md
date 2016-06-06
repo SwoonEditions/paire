@@ -21,11 +21,11 @@ The optimal solution is to add paire to deployment step, so that built packages 
 
 ## How to install paire?
 
-The latest version is 0.1.0.
+The latest version is 0.2.0.
 
 Paire consists of two commands:
- - `paire-push` to upload packages (pre-built 64bin binaries for [Linux](l), [Mac](m),  [Windows](w)).
- - `paire-pull` to download packages for github (pre-built 64bin binaries for [Linux](l), [Mac](m),  [Windows](w)).
+ - `paire-push` to upload packages (pre-built 64bin binaries for [Linux](https://github.com/asarturas/paire/releases/download/0.2.0/paire-push), [Mac](https://github.com/asarturas/paire/releases/download/0.2.0/paire-push_mac),  [Windows](https://github.com/asarturas/paire/releases/download/0.2.0/paire-push.exe)).
+ - `paire-pull` to download packages for github (pre-built 64bin binaries for [Linux](https://github.com/asarturas/paire/releases/download/0.2.0/paire-pull), [Mac](https://github.com/asarturas/paire/releases/download/0.2.0/paire-pull_mac),  [Windows](https://github.com/asarturas/paire/releases/download/0.2.0/paire-pull.exe)).
 
 ## How to use paire-push?
 
@@ -34,7 +34,7 @@ There are two ways you could use paire:
 1. You could run it on local environment to upload package, built on your dev environment:
    
    ```
-   curl https://github.com/asarturas/paire/releases/download/0.2.2/paire-push -o paire-push
+   curl https://github.com/asarturas/paire/releases/download/0.2.0/paire-push -o paire-push
    chmod +x paire-push
    ./paire-push -package your-built-package.zip
    ```
@@ -46,7 +46,7 @@ There are two ways you could use paire:
      github:
        branch: master
        commands:
-         - curl https://github.com/asarturas/paire/releases/download/0.2.2/paire-push -o paire-push
+         - curl https://github.com/asarturas/paire/releases/download/0.2.0/paire-push -o paire-push
          - chmod +x paire-push
          - ./paire-push -package your-built-package.zip
    ```
@@ -62,9 +62,9 @@ Paire pull is useful when you need to download all built packages for certain re
 It is particularly useful if repository is private and there is no direct access via curl.
 For example, these commands would download paire executable to current directory:
 ```
-curl https://github.com/asarturas/paire/releases/download/0.2.2/paire-pull -o paire-pull
+curl https://github.com/asarturas/paire/releases/download/0.2.0/paire-pull -o paire-pull
 chmod +x paire-pull
-./paire-pull -destination . -version 0.2.2
+./paire-pull -destination . -version 0.2.0
 ```
 
 ## Why use paire?
