@@ -1,4 +1,4 @@
-[![Circle CI](https://circleci.com/gh/asarturas/dodin/tree/master.svg?style=svg)](https://circleci.com/gh/asarturas/paire/tree/master)
+[![Circle CI](https://circleci.com/gh/asarturas/paire/tree/master.svg?style=svg)](https://circleci.com/gh/asarturas/paire/tree/master)
 # paire - simple release manager for projects, hosted at github
 
 Features:
