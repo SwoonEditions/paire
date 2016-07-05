@@ -29,6 +29,8 @@ Paire consists of two commands:
 
 ## How to use paire-push?
 
+*Note:* the hard requirement for paire is that environment variable `GITHUB_TOKEN` should be your repository api key, with a permission to acess/edit release/tags.
+
 There are two ways you could use paire:
 
 1. You could run it on local environment to upload package, built on your dev environment:
