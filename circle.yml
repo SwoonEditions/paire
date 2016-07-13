@@ -8,11 +8,11 @@ dependencies:
     - glide install
     - go get github.com/mitchellh/gox
     - ln -sfn ~/.go_workspace/src/github.com/SwoonEditions/paire/vendor src
-    - export GOPATH=$GOPATH:~/.go_workspace/src/github.com/SwoonEditions/paire
 test:
   override:
     - >
-      cd ~/.go_workspace/src/github.com/SwoonEditions/paire
+      export GOPATH=$GOPATH:~/.go_workspace/src/github.com/SwoonEditions/paire
+      && cd ~/.go_workspace/src/github.com/SwoonEditions/paire
       && cd paire
       && go test -v
       && cd ..
