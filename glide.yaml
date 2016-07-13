@@ -1,4 +1,4 @@
-package: github.com/asarturas/paire
+package: github.com/SwoonEditions/paire
 import:
 - package: github.com/google/go-github
   version: 81ea1e5cb324404cd87c66d2a1050c7c31a2121b

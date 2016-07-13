@@ -3,7 +3,7 @@ package paire_test
 import (
 	"testing"
 	. "github.com/smartystreets/goconvey/convey"
-	"github.com/asarturas/paire/paire"
+	"github.com/SwoonEditions/paire/paire"
 	"fmt"
 	"github.com/stretchr/testify/assert"
 )

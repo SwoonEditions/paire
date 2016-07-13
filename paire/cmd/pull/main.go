@@ -4,7 +4,7 @@ import (
 	"flag"
 	"os"
 	"fmt"
-	"github.com/asarturas/paire/paire"
+	"github.com/SwoonEditions/paire/paire"
 )
 
 func main() {

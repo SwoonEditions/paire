@@ -4,7 +4,7 @@ import (
 	"testing"
 	. "github.com/smartystreets/goconvey/convey"
 	"github.com/stretchr/testify/assert"
-	"github.com/asarturas/paire/paire"
+	"github.com/SwoonEditions/paire/paire"
 	"fmt"
 )
 

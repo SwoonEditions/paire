@@ -6,7 +6,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"fmt"
 	"os/exec"
-	"github.com/asarturas/paire/paire"
+	"github.com/SwoonEditions/paire/paire"
 	"os"
 )
 
