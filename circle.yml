@@ -7,6 +7,7 @@ dependencies:
     - ln -sfn ~/paire ~/.go_workspace/src/github.com/SwoonEditions/paire
     - glide install
     - go get github.com/mitchellh/gox
+    - export GOPATH=~/.go_workspace/src/github.com/SwoonEditions/paire/vendor
 test:
   override:
     - >
