@@ -28,7 +28,8 @@ deployment:
     branch: master
     commands:
       - >
-        cd ~/.go_workspace/src/github.com/SwoonEditions/paire/paire/cmd/push
+        export GOPATH=$GOPATH:~/.go_workspace/src/github.com/SwoonEditions/paire
+        && cd ~/.go_workspace/src/github.com/SwoonEditions/paire/paire/cmd/push
         && gox -osarch "darwin/amd64 windows/amd64" -output="paire-{{.Dir}}_{{.OS}}_{{.Arch}}"
         && mv paire-push_linux_amd64 paire-push
         && mv paire-push_darwin_amd64 paire-push_mac
