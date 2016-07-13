@@ -22,7 +22,6 @@ test:
       && cd ../pull
       && gox -osarch "linux/amd64" -output="paire-{{.Dir}}_{{.OS}}_{{.Arch}}"
       && cd ../../..
-      && go test -v *e2e*
 
 deployment:
   github:
