@@ -17,7 +17,6 @@ test:
       && go test -v
       && cd ..
       && go test -v *unit*
-      && go test -v *integration*
       && cd paire/cmd/push
       && gox -osarch "linux/amd64" -output="paire-{{.Dir}}_{{.OS}}_{{.Arch}}"
       && cd ../pull
