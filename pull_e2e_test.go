@@ -12,7 +12,7 @@ import (
 func TestUsingPullBinary(t *testing.T) {
 	Convey("Given there is a successful build for current commit", t, func() {
 		Convey("When I pull this package from github", func() {
-			result, err := exec.Command("./paire/cmd/pull/paire-pull_linux_amd64", "-destination", ".", "-version", "0.1.0").Output()
+			result, err := exec.Command("./paire/cmd/pull/paire-pull_linux_amd64", "-destination", ".", "-version", "0.3.1").Output()
 			assert.Nil(t, err, fmt.Sprintf("There was a problem running the binary: %s", err))
 			Convey("Then I should have pre-release downloaded for current commit", func() {
 				So(string(result[:]), ShouldContainSubstring, "successfully downloaded release")

@@ -19,7 +19,7 @@ func TestPullReleaseIntegration(t *testing.T) {
 			token,
 		)
 		Convey("When I pull this package from github", func() {
-			githubRelease, err := githubApi.Download("0.1.0", ".")
+			githubRelease, err := githubApi.Download("0.3.1", ".")
 			assert.Nil(t, err, fmt.Sprintf("download was not successful %s", err))
 			Convey("Then I should have pre-release downloaded for current commit", func() {
 				So(githubRelease.PreRelease, ShouldBeFalse)
